@@ -1,4 +1,4 @@
-name: T721Admin CI
+name: T721Token CI
 
 on: [push]
 
