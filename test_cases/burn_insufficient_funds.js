@@ -9,7 +9,7 @@ module.exports = {
 
         const credited = accounts[1];
 
-        expect(T721Token.burn(10, {from: credited})).to.eventually.be.rejectedWith('T721Token::burn | insufficient balance for burn');
+        await expect(T721Token.burn(10, {from: credited})).to.eventually.be.rejectedWith('T721Token::burn | insufficient balance for burn');
 
     }
 };
