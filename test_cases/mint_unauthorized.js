@@ -9,7 +9,7 @@ module.exports = {
 
         const credited = accounts[1];
 
-        await expect(T721Token.mintFor(credited, 10, {from: credited})).to.eventually.be.rejectedWith('Ownable: caller is not the owner');
+        await expect(T721Token.mintFor(credited, 10, {from: credited})).to.eventually.be.rejectedWith('Ownable::onlyOwner | Only owners allowed to call method');
 
     }
 };

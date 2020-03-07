@@ -1,10 +1,11 @@
 pragma solidity 0.5.15;
 
-import "@openzeppelin/contracts/ownership/Ownable.sol";
+import "./Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20Detailed.sol";
+import "./IT721Token.sol";
 
-contract T721Token is ERC20, ERC20Detailed, Ownable {
+contract T721Token is IT721Token, ERC20, ERC20Detailed, Ownable {
 
     constructor() public ERC20Detailed("T721 Token", "T721T", 18) {}
 

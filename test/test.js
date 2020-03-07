@@ -12,6 +12,9 @@ const {mint_unauthorized} = require('../test_cases/mint_unauthorized');
 const {burn} = require('../test_cases/burn');
 const {burn_insufficient_funds} = require('../test_cases/burn_insufficient_funds');
 
+const {addOwner} = require('../test_cases/addOwner');
+const {addOwner_already_owner} = require('../test_cases/addOwner_already_owner');
+
 contract('T721Token', (accounts) => {
 
     before(async function () {
@@ -32,6 +35,13 @@ contract('T721Token', (accounts) => {
         const status = await revert(this.snap_id);
         expect(status).to.be.true;
         this.snap_id = await snapshot();
+    });
+
+    describe('Owners', function() {
+
+        it('should add an owner', addOwner);
+        it('should add an owner that already is an owner', addOwner_already_owner);
+
     });
 
     describe('Mint & Burn', function () {
